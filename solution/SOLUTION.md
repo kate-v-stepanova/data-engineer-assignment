@@ -2,20 +2,34 @@
 
 ## Content
 
-0. [Set up virtual env](#set-up-virtual-env)
-1. [Parse data files](#parse-data-files)
+[Prepare virtual env](#prepare-virtual-env)
 
-## Set up virtual env
+[Task 1. Parse data files](#task-1.-parse-data-files)
 
-### 1. Create conda environment
+[Task 2]()
+
+[Task 3. Query UniProtKB](#task-3.-query-UniProtKB)
+
+
+
+## Prepare virtual env
+
+### 1. Clone github repo
 
 ```
-conda create -n scicore python=3.8
-source activate scicore
+git clone git@github.com:kate-v-stepanova/data-engineer-assignment.git
+cd data-engineer-assignment
+```
+
+### 2. Create conda environment
+
+```
+conda create -n assignment python=3.8
+source activate assignment
 pip install -r pip_requirements.txt
 ```
 
-## Parse data files
+## Task 1. Parse data files
 
 ### 0. Print script help
 
@@ -60,3 +74,18 @@ python solution/1_parse_files.py <illumina-file> illumina <outfile>
 
 ### 4. Parse `MIC` file
 
+
+
+## Task 2.
+
+
+
+## Task 3. Query UniProtKB
+
+```
+python solution/3_query_protKB.py assignment_db.sql
+```
+
+
+
+## Task 4.

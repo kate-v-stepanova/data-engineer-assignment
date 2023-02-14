@@ -18,15 +18,17 @@
 
 ## Repository Structure
 
+The link to forked repository: https://github.com/kate-v-stepanova/data-engineer-assignment
+
 The directory [solution](solution/)  was added to the original repo and contains all the files related to the solution:
 
-* Script [1_parse_files.py](solution/1_parse_files.py) for the first task
+* Script [1_parse_files.py](1_parse_files.py) for the first task
 
-* Script  [2_list_files_by_species.py](solution/2_list_files_by_species.py)  for the second task
+* Script  [2_list_files_by_species.py](2_list_files_by_species.py)  for the second task
 
-* Script [3_query_protKB.py](solution/3_query_protKB.py)  for the third task
+* Script [3_query_protKB.py](3_query_protKB.py)  for the third task
 
-* DB file [assignment_db.sql](solution/assignment_db.sql) containing the following tables:
+* DB file [assignment_db.sql](assignment_db.sql) containing the following tables:
 
   * `nanopore`
   * `illumina`
@@ -34,9 +36,9 @@ The directory [solution](solution/)  was added to the original repo and contains
   * `mic`
   * `UniProtKB` 
 
-* File [joined_tables.csv](solution/joined_tables.csv) which contains the output of the task 2
+* File [joined_tables.csv](joined_tables.csv) which contains the output of the task 2
 
-* File [SOLUTION.md](solution/SOLUTION.md) that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
+* File [SOLUTION.md](SOLUTION.md) that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
 
   
 

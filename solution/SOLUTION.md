@@ -2,8 +2,6 @@
 
 ## Content
 
-[Repository Structure](#repository-structure)
-
 [Prepare virtual env](#prepare-virtual-env)
 
 [Task 1. Parse data files](#task-1.-parse-data-files)
@@ -14,33 +12,9 @@
 
 [Task 4. Comment on following aspects](#task-4.-comment-on-following-aspects)
 
+[Repository Structure](#repository-structure)
 
 
-## Repository Structure
-
-The link to forked repository: https://github.com/kate-v-stepanova/data-engineer-assignment
-
-The directory [solution](solution/)  was added to the original repo and contains all the files related to the solution:
-
-* Script [1_parse_files.py](1_parse_files.py) for the first task
-
-* Script  [2_list_files_by_species.py](2_list_files_by_species.py)  for the second task
-
-* Script [3_query_protKB.py](3_query_protKB.py)  for the third task
-
-* DB file [assignment_db.sql](assignment_db.sql) containing the following tables:
-
-  * `nanopore`
-  * `illumina`
-  * `sample_table`
-  * `mic`
-  * `UniProtKB` 
-
-* File [joined_tables.csv](joined_tables.csv) which contains the output of the task 2
-
-* File [SOLUTION.md](SOLUTION.md) that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
-
-  
 
 ## Prepare virtual env
 
@@ -196,17 +170,27 @@ python solution/3_query_protKB.py solution/assignment_db.sql
  </details>
  
 
-<details>
-  <summary></summary>
 
-**2. Question:** If you have been exposed to FAIR principles, how would you modify the schema to make it most compatible with other datasets available in public repositories
+## Repository Structure
 
-**Solution:**
+The link to forked repository: https://github.com/kate-v-stepanova/data-engineer-assignment
 
+The directory [solution](solution/)  was added to the original repo and contains all the files related to the solution:
 
+* Script [1_parse_files.py](1_parse_files.py) for the first task
 
-**3. Question:** What would be your recommendation for possible tools to manage such tabular data?
+* Script  [2_list_files_by_species.py](2_list_files_by_species.py)  for the second task
 
-**Solution:** 
+* Script [3_query_protKB.py](3_query_protKB.py)  for the third task
 
- </details>
+* DB file [assignment_db.sql](assignment_db.sql) containing the following tables:
+
+  * `nanopore`
+  * `illumina`
+  * `sample_table`
+  * `mic`
+  * `UniProtKB` 
+
+* File [joined_tables.csv](joined_tables.csv) which contains the output of the task 2
+
+* File [SOLUTION.md](SOLUTION.md) that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation

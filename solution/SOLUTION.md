@@ -18,15 +18,15 @@
 
 ## Repository Structure
 
-The directory `solution` was added to the original repo and contains all the files related to the solution:
+The directory [solution](solution/)  was added to the original repo and contains all the files related to the solution:
 
-* Script `solution/1_parse_files.py` for the first task
+* Script [1_parse_files.py](solution/1_parse_files.py) for the first task
 
-* Script `solution/2_list_files_by_species.py` for the second task
+* Script  [2_list_files_by_species.py](solution/2_list_files_by_species.py)  for the second task
 
-* Script `solution/3_query_protKB.py` for the third task
+* Script [3_query_protKB.py](solution/3_query_protKB.py)  for the third task
 
-* DB file `solution/assignment_db.sql` containing the following tables:
+* DB file [assignment_db.sql](solution/assignment_db.sql) containing the following tables:
 
   * `nanopore`
   * `illumina`
@@ -34,9 +34,9 @@ The directory `solution` was added to the original repo and contains all the fil
   * `mic`
   * `UniProtKB` 
 
-* File `solution/joined_tables.csv` which contains the output of the task 2
+* File [joined_tables.csv](solution/joined_tables.csv) which contains the output of the task 2
 
-* File `SOLUTION.md` that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
+* File [SOLUTION.md](solution/SOLUTION.md) that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
 
   
 
@@ -63,6 +63,7 @@ Requirements are the following:
 pandas
 sqlite3
 click
+requests
 ```
 
 
@@ -130,7 +131,7 @@ python solution/1_parse_files.py MIC_data.csv solution/assignment_db.sql mic mic
 > Let's assume, that `all` includes `sequenced` and `resequenced` nanopore files.
 
 ```
-python solution/2_spicies_files.py solution/assignment_db.sql Kleb
+python solution/2_list_files_by_species.py solution/assignment_db.sql Kleb solution/joined_table.csv
 ```
 
 

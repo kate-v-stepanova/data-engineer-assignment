@@ -154,6 +154,24 @@ python solution/3_query_protKB.py solution/assignment_db.sql
 
 ​	**General Solution:** Add column `Labor Number` to all tables respectively.
 
+<details>
+  <summary>Illumina table</summary>
+
+  ![](imgs/illumina_table.png)
+
+</details>
+
+
+
+<details>
+  <summary>Nanopore table</summary>
+
+  ![](imgs/nanopore_table.png)
+
+</details>  
+
+
+
 ​	**Alternative:** Modify the actual tables, so that:
 
 		* Add to `illumina` table an extra column `Labor Number`

@@ -146,6 +146,13 @@ python solution/2_list_files_by_species.py solution/assignment_db.sql Kleb solut
 python solution/3_query_protKB.py solution/assignment_db.sql
 ```
 
+> **_IMPORTANT NOTE:_**  The results obtained by API differ from the results obtain in the web-tool.
+> 
+> API returns 25 entries. API query: https://rest.uniprot.org/uniprotkb/search?query=taxonomy_id:573+AND+imipenem&format=tsv
+> 
+> Web-tool returns 79 entries. Web-query: https://www.uniprot.org/uniprotkb?query=Imipenem%20AND%20taxonomy_id%3A573
+> 
+> **However,** trying to download the results from web as a `.tsv` table returns again 25 entries!
 
 
 ## Task 4. Comment on following aspects

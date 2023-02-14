@@ -98,7 +98,7 @@ python solution/1_parse_files.py MIC_data.csv solution/assignment_db.sql mic mic
 ## Task 3. Query UniProtKB
 
 ```
-python solution/3_query_protKB.py assignment_db.sql
+python solution/3_query_protKB.py solution/assignment_db.sql
 ```
 
 ## Task 4.

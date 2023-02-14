@@ -181,6 +181,16 @@ python solution/3_query_protKB.py solution/assignment_db.sql
     * Add column `barcode` to `nanopore` table.
 
 
+<details>
+ <summary>sample_table</summary>
+ 
+ ![](imgs/sample_table.png)
+ 
+ </details>
+ 
+
+<details>
+  <summary></summary>
 
 **2. Question:** If you have been exposed to FAIR principles, how would you modify the schema to make it most compatible with other datasets available in public repositories
 
@@ -191,3 +201,5 @@ python solution/3_query_protKB.py solution/assignment_db.sql
 **3. Question:** What would be your recommendation for possible tools to manage such tabular data?
 
 **Solution:** 
+
+ </details>

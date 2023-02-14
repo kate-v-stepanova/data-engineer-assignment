@@ -152,7 +152,7 @@ python solution/3_query_protKB.py solution/assignment_db.sql
 
 **1. Question:** How would you modify the data schema to make the tables "joinable"?
 
-​	**General Solution:** Add column `Labor Number` to all tables respectively.
+**General Solution:** Add column `Labor Number` to all tables respectively.
 
 <details>
   <summary>Illumina table</summary>
@@ -172,9 +172,9 @@ python solution/3_query_protKB.py solution/assignment_db.sql
 
 
 
-​	**Alternative:** Modify the actual tables, so that:
+ **Alternative:** Modify the actual tables, so that:
 
-		* Add to `illumina` table an extra column `Labor Number`
+  * Add to `illumina` table an extra column `Labor Number`
   * Modify `nanopore` table, such as:
     * In case if resequenced files **replace** the first sequenced files, it makes sense to remove columns `resequenced` and `rebarcode` from `nanopore` table, simply replacing corresponding values in `sequenced` column. If necessary, can add a flag `resequenced` column [True / False] to the table.
     * In case if both `sequenced` and `resequenced` files are kept, I would also remove `resequenced` and `rebarcode` columns, simply adding a row for each resequenced file. Yes, it would require more memory, but it will simplify `join` operations with tables. If necessary to keep a reference 

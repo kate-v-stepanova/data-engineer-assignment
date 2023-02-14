@@ -7,7 +7,7 @@ import sys
 import os
 
 @click.group()
-@click.option('--replace-if-exists', default=False, help='replace table if exists, otherwise do nothing')
+@click.option('--replace-if-exists', is_flag=True, default=False, help='replace table if exists, otherwise do nothing')
 @click.argument('infile')
 @click.argument('dbfile')
 @click.argument('table_name', required=False, default=None) # optional
@@ -85,7 +85,8 @@ def illumina(ctx):
 
     # write sql
     col_types = ['integer', 'text', 'text']
-    df.to_sql(table_name, conn, dtypes=col_types)
+    dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
+    df.to_sql(table_name, conn, dtype=dict_types)
     conn.close()
     print('Data from {} has been saved into DB: {}.{}'.format(infile, dbfile, table_name))
 
@@ -133,7 +134,8 @@ def nanopore(ctx):
 
     # save to sql
     col_types = ['text', 'date']
-    df.to_sql(table_name, conn, dtypes=col_types)
+    dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
+    df.to_sql(table_name, conn, dtype=dict_types)
     conn.close()
     print('Data from {} has been saved into DB: {}.{}'.format(infile, dbfile, table_name))
 
@@ -169,7 +171,7 @@ def sample_table(ctx):
     # close connection
     conn.close()
 
-    print('Data from {} has been saved into a DB: {}.table_name'.format(infile, dbfile, table_name))
+    print('Data from {} has been saved into a DB: {}: {}'.format(infile, dbfile, table_name))
 
 
 # parse mic data

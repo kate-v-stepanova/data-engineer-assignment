@@ -1,0 +1,26 @@
+Entry;Entry Name;Reviewed;Protein names;Gene Names;Organism;Length
+C7C422;BLAN1_KLEPN;reviewed;Metallo-beta-lactamase type 2 (EC 3.5.2.6) (B2 metallo-beta-lactamase) (Beta-lactamase type II) (Metallo-beta-lactamase NDM-1) (Metallo-beta-lactamase type II) (New Delhi metallo-beta-lactamase-1) (NDM-1);blaNDM-1;Klebsiella pneumoniae;270
+Q9S424;BLA13_KLEPN;reviewed;Beta-lactamase SHV-13 (EC 3.5.2.6);bla shv13;Klebsiella pneumoniae;286
+A0A0A8IKC4;A0A0A8IKC4_KLEPN;unreviewed;"Bifunctional NAD(P)H-hydrate repair enzyme (Nicotinamide nucleotide repair protein) [Includes: ADP-dependent (S)-NAD(P)H-hydrate dehydratase (EC 4.2.1.136) (ADP-dependent NAD(P)HX dehydratase); NAD(P)H-hydrate epimerase (EC 5.1.99.6)]";yjeF nnrD nnrE;Klebsiella pneumoniae;508
+Q93LQ9;Q93LQ9_KLEPN;unreviewed;beta-lactamase (EC 3.5.2.6);KPC-2 bla bla_3 blaKPC blaKPC-2 kpc2 B5L96_22635 DN601_28785 EAO17_31575 GNE24_27570 GNG14_28365 HV479_27455 IPF_358 KP64477d_00006 KPC_069 p628KPC_020 pCRE79_15 pCT-KPC_129 pFOS18_014 pkp469IL_0095 pkp53il_00095 SAMEA3512100_05115 UC330_005 UC332_005 UC334_005;Klebsiella pneumoniae;293
+Q6XDA9;Q6XDA9_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);;Klebsiella pneumoniae;276
+A0A0A8ILE8;A0A0A8ILE8_KLEPN;unreviewed;Small ribosomal subunit biogenesis GTPase RsgA (EC 3.6.1.-);yjeQ rsgA;Klebsiella pneumoniae;353
+W9BJM5;W9BJM5_KLEPN;unreviewed;Epoxyqueuosine reductase (EC 1.17.99.6) (Queuosine biosynthesis protein QueG);yjeS queG B5L96_20470 BN49_4868 HV479_17545 SAMEA3499901_01494 SAMEA3512100_04153 SAMEA3538828_03242;Klebsiella pneumoniae;379
+H1ACB7;H1ACB7_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);blaIMP-6;Klebsiella pneumoniae;246
+H1ACB8;H1ACB8_KLEPN;unreviewed;Aminoglycoside (3'') (9) adenylyltransferase (EC 2.7.7.47);aadA2;Klebsiella pneumoniae;287
+Q2I354;Q2I354_KLEPN;unreviewed;Outer membrane protein;ompK36;Klebsiella pneumoniae;361
+Q48428;Q48428_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);;Klebsiella pneumoniae;381
+A0A0E1GUW8;A0A0E1GUW8_KLEPN;unreviewed;Arginine ABC transporter substrate-binding protein (ArtI) (Lysine-arginine-ornithine-binding periplasmic protein) (Transporter substrate-binding domain-containing protein);artJ_2 artJ_1 artJ_3 artJ_4 B5L96_20495 FXN67_11275 HV479_17565 NCTC11679_05224 NCTC13443_01138 NCTC3279_04532 NCTC8849_00540 NCTC9128_06027 NCTC9617_04918 SAMEA3499901_01490 SAMEA3512100_04149 SAMEA3538828_03238;Klebsiella pneumoniae;243
+A0A482LRD5;A0A482LRD5_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);blaOXA;Klebsiella pneumoniae;255
+A0A2Z4GTA4;A0A2Z4GTA4_KLEPN;unreviewed;New Delhi metallo-beta-lactamase;blaNDM;Klebsiella pneumoniae;118
+G5CKK8;G5CKK8_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);blaOXA-181;Klebsiella pneumoniae;265
+B6RFQ2;B6RFQ2_KLEPN;unreviewed;Tetracycline efflux protein TetA (Tetracycline resistance protein);tetA tetA_2 SAMEA3499874_05005;Klebsiella pneumoniae;399
+A0A0A8IL35;A0A0A8IL35_KLEPN;unreviewed;N-acetylmuramoyl-L-alanine amidase;AmiB;Klebsiella pneumoniae;231
+Q8GF08;Q8GF08_KLEPN;unreviewed;Beta-lactamase (EC 3.5.2.6);bla-SHV-38 blaSHV;Klebsiella pneumoniae;286
+H1ACB6;H1ACB6_KLEPN;unreviewed;Aminoglycoside (6)'-N-acetyltransferase;aacA4;Klebsiella pneumoniae;206
+I7GY84;I7GY84_KLEPN;unreviewed;Mrr restriction system protein;mrr;Klebsiella pneumoniae;169
+I7GY85;I7GY85_KLEPN;unreviewed;TraL conjugal transfer protein;traL;Klebsiella pneumoniae;199
+I7GY88;I7GY88_KLEPN;unreviewed;Tetracyclin resistance repressor protein;tetR;Klebsiella pneumoniae;208
+I7H400;I7H400_KLEPN;unreviewed;KorB plasmid partition protein;korB;Klebsiella pneumoniae;86
+I7GSK3;I7GSK3_KLEPN;unreviewed;StbA plasmid inheritance protein;stbA;Klebsiella pneumoniae;126
+H1ACB9;H1ACB9_KLEPN;unreviewed;Transposase of IS91 family;tnp;Klebsiella pneumoniae;371

@@ -29,8 +29,10 @@ except:
     print('Cant open connection: {}'.format(dbfile))
     sys.exit()
 
+col_types = ['text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer']
+dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
 try:
-    df.to_sql(table_name, conn)
+    df.to_sql(table_name, conn, dtype=dict_types, index=False, if_exists='replace')
 except:
     print('Cant write table {} into {}'.format(table_name, dbfile))
     sys.exit()

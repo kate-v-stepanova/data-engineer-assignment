@@ -33,6 +33,7 @@ def illumina(ctx):
     infile = ctx.obj.get('infile')
     dbfile = ctx.obj.get('dbfile')
     table_name = ctx.obj.get('table_name') or 'illumina'
+    if_exists = ctx.obj.get('if_exists')
     df = pd.read_csv(infile, names=['file'], engine='python', error_bad_lines=False)
 
     # remove *trimming_report.txt files
@@ -86,10 +87,9 @@ def illumina(ctx):
     # write sql
     col_types = ['integer', 'text', 'text']
     dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
-    df.to_sql(table_name, conn, dtype=dict_types)
+    df.to_sql(table_name, conn, dtype=dict_types, if_exists=if_exists, index=False)
     conn.close()
     print('Data from {} has been saved into DB: {}.{}'.format(infile, dbfile, table_name))
-
     
 
 @cli.command()
@@ -101,6 +101,7 @@ def nanopore(ctx):
     infile = ctx.obj.get('infile')
     dbfile = ctx.obj.get('dbfile')
     table_name = ctx.obj.get('table_name') or 'nanopore'
+    if_exists = ctx.obj.get('if_exists')
     df = pd.read_csv(infile, names=['file'], engine='python', error_bad_lines=False)
 
     # get level
@@ -119,15 +120,14 @@ def nanopore(ctx):
     # 
     for i, row in level0.iterrows():
         seq_date =  row['file'].split('/')[1].split('_')[0]
-        seq_date = seq_date[-2:] + '.' + seq_date[-4:-2] + '.' + seq_date[:4]
+        df.loc[row['start']:row['end'], 'sequenced'] = seq_date
         df.loc[row['start']:row['end'], 'full_path'] = row['file'] + '/' + df.loc[row['start']:row['end'], 'file']
-        df.loc[row['start']:row['end'], 'seq_date'] = seq_date
-
+        
     # remove dir rows 
     df = df.drop(level0.index)
 
     # re-arrange cols
-    df = df[['seq_date', 'full_path']]
+    df = df[['sequenced', 'full_path']]
 
     # open / create database file
     conn = sqlite3.connect(dbfile)
@@ -135,7 +135,7 @@ def nanopore(ctx):
     # save to sql
     col_types = ['text', 'date']
     dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
-    df.to_sql(table_name, conn, dtype=dict_types)
+    df.to_sql(table_name, conn, dtype=dict_types, if_exists=if_exists, index=False)
     conn.close()
     print('Data from {} has been saved into DB: {}.{}'.format(infile, dbfile, table_name))
 
@@ -166,7 +166,7 @@ def sample_table(ctx):
     dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
 
     # save df to sql
-    df.to_sql(table_name, conn, if_exists=if_exists, dtype=dict_types)
+    df.to_sql(table_name, conn, if_exists=if_exists, dtype=dict_types, index=False)
 
     # close connection
     conn.close()
@@ -199,12 +199,11 @@ def mic(ctx):
     dict_types = {df.columns[i]: col_types[i] for i in range(len(df.columns))}
 
     # save df to sql
-    df.to_sql(table_name, conn, if_exists=if_exists, dtype=dict_types)
+    df.to_sql(table_name, conn, if_exists=if_exists, dtype=dict_types, index=False)
     # close connection
     conn.close()
 
     print('Data from {} has been saved into a DB: {}.{}'.format(infile, dbfile, table_name))
-
 
 
 if __name__ == '__main__':

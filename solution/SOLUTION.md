@@ -2,15 +2,43 @@
 
 ## Content
 
+[Repository Structure](#repository-structure)
+
 [Prepare virtual env](#prepare-virtual-env)
 
 [Task 1. Parse data files](#task-1.-parse-data-files)
 
-[Task 2]()
+[Task 2. List files by species](#task-2.-list-files-by-species)
 
 [Task 3. Query UniProtKB](#task-3.-query-UniProtKB)
 
+[Task 4. Comment on following aspects](#task-4.-comment-on-following-aspects)
 
+
+
+## Repository Structure
+
+The directory `solution` was added to the original repo and contains all the files related to the solution:
+
+* Script `solution/1_parse_files.py` for the first task
+
+* Script `solution/2_list_files_by_species.py` for the second task
+
+* Script `solution/3_query_protKB.py` for the third task
+
+* DB file `solution/assignment_db.sql` containing the following tables:
+
+  * `nanopore`
+  * `illumina`
+  * `sample_table`
+  * `mic`
+  * `UniProtKB` 
+
+* File `solution/joined_tables.csv` which contains the output of the task 2
+
+* File `SOLUTION.md` that lists all the commands executed for the assignment, as well as answers to the questions which don't require implementation
+
+  
 
 ## Prepare virtual env
 
@@ -37,7 +65,11 @@ sqlite3
 click
 ```
 
+
+
 ## Task 1. Parse data files
+
+**Task 1:** Write a script (e.g. in Python) to parse the four provided files and create an SQL database (e.g. local SQLite DB) to store the key information from the dataset.
 
 ### 0. Print script help
 
@@ -74,7 +106,7 @@ python solution/1_parse_files.py illumina_data.tree solution/assignment_db.sql i
 ### 2. Parse `nanopore` file
 
 ```
-python solution/1_parse_files.py illumina_data.tree solution/assignment_db.sql nanopore nanopore
+python solution/1_parse_files.py nanopore_data.tree solution/assignment_db.sql nanopore nanopore
 ```
 
 ### 3. Parse `sample_table`
@@ -91,21 +123,43 @@ python solution/1_parse_files.py MIC_data.csv solution/assignment_db.sql mic mic
 
 
 
-## Task 2.
+## Task 2. List files by species
+
+**Task 2:** Write a script which joins the tables to list `all` files (file paths) belonging to a species
+
+> Let's assume, that `all` includes `sequenced` and `resequenced` nanopore files.
+
+```
+python solution/2_spicies_files.py solution/assignment_db.sql Kleb
+```
 
 
 
 ## Task 3. Query UniProtKB
 
+**Task 3**: As a way to enrich the data in this dataset find all proteins in UniProtKB which are annotated with the antibiotic Imipenem for the organism Klebsellia pneumoniae (TaxID 573, annotated as "Klebs" in the previous tables). To accomplish this, please write a script using the UniProtKB API to get this information and insert it as a table in the same SQL database.
+
 ```
 python solution/3_query_protKB.py solution/assignment_db.sql
 ```
 
-## Task 4.
+
+
+## Task 4. Comment on following aspects
 
 **1. Question:** How would you modify the data schema to make the tables "joinable"?
 
-​	**Solution:** Adding a column `Experiment ID`  to all tables
+​	**General Solution:** Add column `Labor Number` to all tables respectively.
+
+​	**Alternative:** Modify the actual tables, so that:
+
+		* Add to `illumina` table an extra column `Labor Number`
+  * Modify `nanopore` table, such as:
+    * In case if resequenced files **replace** the first sequenced files, it makes sense to remove columns `resequenced` and `rebarcode` from `nanopore` table, simply replacing corresponding values in `sequenced` column. If necessary, can add a flag `resequenced` column [True / False] to the table.
+    * In case if both `sequenced` and `resequenced` files are kept, I would also remove `resequenced` and `rebarcode` columns, simply adding a row for each resequenced file. Yes, it would require more memory, but it will simplify `join` operations with tables. If necessary to keep a reference 
+    * Add column `barcode` to `nanopore` table.
+
+
 
 **2. Question:** If you have been exposed to FAIR principles, how would you modify the schema to make it most compatible with other datasets available in public repositories
 
